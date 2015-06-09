@@ -8,7 +8,7 @@ var siteurl = $('#site-url').attr("href"); // Get url for blog (in case site is 
  ******************/
 
 if($("code").length !== 0){
-    $.getScript(siteurl+"/assets/js/helper/highlight.min.js", function() { 
+    $.getScript("/assets/js/helper/highlight.min.js", function() { 
         hljs.initHighlightingOnLoad();
     });
 }
@@ -17,7 +17,7 @@ if($("code").length !== 0){
  * RESPONSIVE VIDEOS  *
  **********************/
 
-$.getScript(siteurl+"/assets/js/helper/jquery.fitvids.js", function() { 
+$.getScript("/assets/js/helper/jquery.fitvids.js", function() { 
     $("#main").fitVids();
 });
 
@@ -26,7 +26,7 @@ $.getScript(siteurl+"/assets/js/helper/jquery.fitvids.js", function() {
  ***********/
 
 if($('p a:not(:only-child) img').closest('p').length !== 0 || $('p img:not(:only-child)').closest('p').length !== 0){ // If there is a gallery present.
-    $.getScript(siteurl+"/assets/js/helper/imagesloaded.pkgd.min.js", function() {
+    $.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() {
         $('p a:not(:only-child) img').closest('p').addClass('gallery');
         $('p img:not(:only-child)').closest('p').addClass('gallery');
         $(".gallery").imagesLoaded(gallery);
@@ -35,7 +35,7 @@ if($('p a:not(:only-child) img').closest('p').length !== 0 || $('p img:not(:only
 }
 
 function gallery(){
-    $.getScript(siteurl+"/assets/js/helper/gallery.min.js", function() { // Load in script for gallery
+    $.getScript("/assets/js/helper/gallery.min.js", function() { // Load in script for gallery
         var size = 0;
         if ($(window).height() > $(window).width()){
             size = $(window).height();
@@ -58,7 +58,7 @@ function gallery(){
  *********************/
 
 if($("#main").hasClass("content")){
-    $.getScript(siteurl+"/assets/js/helper/imagesloaded.pkgd.min.js", function() { 
+    $.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() { 
         function fullImage(){
             $('img[src$="#full"]:only-child').each(function() {
                 $(this).addClass("full-loaded");
@@ -76,8 +76,8 @@ if($("#main").hasClass("content")){
  ************/
 
 if($("#main").hasClass("content")){
-    $.getScript(siteurl+"/assets/js/helper/jquery.fluidbox.min.js", function() {
-        $.getScript(siteurl+"/assets/js/helper/imagesloaded.pkgd.min.js", function() {
+    $.getScript("/assets/js/helper/jquery.fluidbox.min.js", function() {
+        $.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() {
             function lightBox(){
                 $('.content a').filter(function() {
                     return $(this).attr('href').match(/\.(jpeg|jpg|png|gif)/i);
@@ -110,8 +110,8 @@ $(window).resize(function(){
 
 var $masonry;
 if($("#main").hasClass("archive")){
-    $.getScript(siteurl+"/assets/js/helper/masonry.pkgd.min.js", function() {
-        $.getScript(siteurl+"/assets/js/helper/imagesloaded.pkgd.min.js", function() {
+    $.getScript("/assets/js/helper/masonry.pkgd.min.js", function() {
+        $.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() {
             $("#main").imagesLoaded(function(){
                 $masonry = $('.feed').masonry({
                     columnWidth: '.post:not(.featured)',
